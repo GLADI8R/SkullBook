@@ -30,6 +30,14 @@ app.get('/', (req, res) => {
     res.render('Home');
 });
 
+app.get('/add', (req, res) => {
+    res.render('Add');
+});
+
+app.post('/add', (req, res)=> {
+    res.render('Home');
+});
+
 app.listen(port, () => {
     console.log(`Server started at port: ${port}`);
 });
