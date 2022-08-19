@@ -11,23 +11,24 @@ app.set('view engine', 'ejs');
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({extended: true}));
 
-// mongoose.connect("mongodb://localhost:27017/ReviewsDB", {
-//    useUnifiedTopology: true, 
-//    useNewUrlParser: true
-// });
-// mongoose.set('useNewUrlParser', true);
-// mongoose.set('useFindAndModify', false);
-// mongoose.set('useCreateIndex', true);
-// mongoose.set('useUnifiedTopology', true);
+mongoose.connect("mongodb://localhost:27017/ProfileDB", {
+   useUnifiedTopology: true, 
+   useNewUrlParser: true
+});
 
-// const blogSchema = new Schema({
-//    email: String,
-//    name: String,
-//    body: String
-// });
+const ProfileSchema = new Schema({
+   email: String,
+   name: String,
+   desc: String
+});
+
+const Profile = mongoose.model('Profile', ProfileSchema)
+Profile.createIndexes();
 
 app.get('/', (req, res) => {
-    res.render('Home');
+    Profile.find({}, function(err, profiles){
+      res.render('Home', {profiles: profiles});
+   });
 });
 
 app.get('/add', (req, res) => {
@@ -35,7 +36,18 @@ app.get('/add', (req, res) => {
 });
 
 app.post('/add', (req, res)=> {
-    res.render('Home');
+    const profile = new Profile({
+        email: req.body.email,
+        name: req.body.name,
+        desc: req.body.desc
+    });
+    // console.log(req.body);
+    // res.render('Home');
+    profile.save((err) => {
+      if(!err){
+         res.redirect('/');
+      }
+   });
 });
 
 app.listen(port, () => {

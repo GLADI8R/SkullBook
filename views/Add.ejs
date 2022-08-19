@@ -6,25 +6,21 @@
         <tr>
             <td>
                 <!-- Form for crud operations -->
-                <form autocomplete="off">
+                <form action='/add', method="POST">
                     <div>
-                        <label for="">Full name</label>
-                        <input type="text" name="fullname">
+                        <label for="">Email</label>
+                        <input type="email" name="email">
                     </div>
                     <div>
-                        <label for="">Age</label>
-                        <input type="text" name="naam">
+                        <label for="">Name</label>
+                        <input type="name" name="name">
                     </div>
                     <div>
-                        <label for="">Height</label>
-                        <input type="text" name="lambaai">
+                        <label for="">Description</label>
+                        <input type="text" name="desc">
                     </div>
-                    <div class="form-action-buttons"></div>
-                    <input type="Submit" value="Submit">
+                    <button type="submit" class="btn btn-dark">Publish</button>
                 </form>
-            </td>
-            <td>
-
             </td>
         </tr>
     </table>
