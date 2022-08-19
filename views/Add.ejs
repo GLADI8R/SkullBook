@@ -1,28 +1,36 @@
 <%- include("partials/header"); -%>
 
-</head>
-<body>
-    <table>
-        <tr>
-            <td>
-                <!-- Form for crud operations -->
-                <form action='/add', method="POST">
-                    <div>
-                        <label for="">Email</label>
-                        <input type="email" name="email">
-                    </div>
-                    <div>
-                        <label for="">Name</label>
-                        <input type="name" name="name">
-                    </div>
-                    <div>
-                        <label for="">Description</label>
-                        <input type="text" name="desc">
-                    </div>
-                    <button type="submit" class="btn btn-dark">Publish</button>
-                </form>
-            </td>
-        </tr>
-    </table>
+    </head>
 
-<%- include("partials/footer"); -%>
+    <body>
+        <div class="container">
+            <table class="table">
+                <tr>
+                    <td>
+                        <!-- Form for crud operations -->
+                        <form action='/add' , method="POST" autocomplete="off">
+
+                            <img src="https://icon-library.com/images/new-user-icon/new-user-icon-15.jpg"
+                                alt="Add image here" class="brand-logo">
+                            <div>
+                                <label for="">Email</label>
+                                
+                                <input type="email" name="email" placeholder="example@test.com">
+                            </div>
+                            <div>
+                                <label for="">Name</label>
+                                <input type="name" name="name" placeholder="First name + Last name"
+                                    style="align-self:center">
+                            </div>
+                            <div>
+                                <label for="">Description</label>
+                                <input type="text" name="desc" placeholder="Something about yourself">
+                            </div><br>
+                            <button type="submit" class="btn btn-dark">Publish</button>
+                        </form>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <%- include("partials/footer"); -%>

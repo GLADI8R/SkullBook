@@ -1,0 +1,47 @@
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.table {
+    
+    /* position: relative; */
+    width: 350px;
+    height: 500px;
+    border-radius: 20px;
+    padding: 40px;
+    box-sizing: border-box;
+    background: #e3eaef;
+    box-shadow: 14px 14px 20px #cbced1, -14px -14px 20px white;
+    
+}
+label, input, button {
+    display: block;
+    width: 260px;
+    padding: 3px;
+    border: none;
+    outline: none;
+    box-sizing: border-box;
+    margin:auto;
+    line-height: 1.7em;
+  }
+  .brand-logo {
+    height: 100px;
+    width: 100px;
+    margin: auto;
+    border-radius: 50%;
+    box-sizing: border-box;
+    box-shadow: 7px 7px 10px #cbced1, -7px -7px 10px white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .newimage {
+    height: 100px;
+    width: 100px;
+    /* margin-left: auto;
+    margin-right: auto; */
+    /* align-items: center; */
+    border-radius: 50%;
+    box-sizing: border-box;
+  }
