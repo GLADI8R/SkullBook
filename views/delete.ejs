@@ -1,0 +1,27 @@
+<%- include("partials/header"); -%>
+
+    </head>
+
+    <body>
+        <div class="container">
+            <table class="table">
+                <tr>
+                    <td>
+                        <!-- Form for crud operations -->
+                        <form action='/delete' , method="POST" autocomplete="off">
+
+                            <img src="https://icon-library.com/images/new-user-icon/new-user-icon-15.jpg"
+                                alt="Add image here" class="brand-logo">
+                            <div>
+                                <label for="">Email</label>
+                                
+                                <input type="email" name="email" placeholder="example@test.com">
+                            </div>
+                           <br>
+                            <button type="submit" class="btn btn-dark">Verify</button>
+                        </form>
+                    </td>
+                </tr>
+            </table>
+        </div>
+            <%- include("partials/footer"); -%>
